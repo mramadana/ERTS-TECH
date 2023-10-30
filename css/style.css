@@ -285,6 +285,40 @@ html[lang=ar] .lang button::after {
   font-size: 19px;
   color: #000;
   transition: 0.5s;
+  position: relative;
+}
+.nav-header .nav-links .link::after {
+  content: "";
+  display: block;
+  margin: auto;
+  height: 2px;
+  width: 0px;
+  background: transparent;
+  transition: width 0.5s ease, background-color 0.5s ease;
+  position: absolute;
+  bottom: -8px;
+}
+html[lang=en] .nav-header .nav-links .link::after {
+  left: 0;
+}
+html[lang=ar] .nav-header .nav-links .link::after {
+  right: 0;
+}
+@media (max-width: 550px) {
+  .nav-header .nav-links .link::after {
+    display: none;
+  }
+}
+.nav-header .nav-links .link.active::after {
+  width: 50%;
+  background-color: #7a1d33;
+}
+.nav-header .nav-links .link:hover::after {
+  width: 100%;
+  background-color: #7a1d33;
+}
+.nav-header .nav-links .link:hover .anchor {
+  color: #7a1d33;
 }
 @media (max-width: 1280px) {
   .nav-header .nav-links .link {
@@ -538,6 +572,15 @@ html[lang=ar] .nav-btn.active span:nth-child(2) {
 }
 .main-banner .banner-links a i {
   margin-inline-start: 7px;
+  width: 25px;
+  height: 25px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  padding: 3px;
 }
 .main-banner h1 {
   text-align: start;
@@ -585,7 +628,7 @@ html[lang=ar] .nav-btn.active span:nth-child(2) {
   padding: 10px 0 35px;
   max-width: 100%;
   font-size: 18px;
-  padding: 50px 0;
+  padding: 50px 0 75px;
 }
 @media (max-width: 550px) {
   .banner-info {
@@ -676,6 +719,17 @@ html[lang=ar] .nav-btn.active span:nth-child(2) {
   transform: translateX(-50%);
   z-index: 1;
 }
+@media (max-width: 1280px) {
+  .about-bg {
+    top: -50%;
+  }
+}
+@media (max-width: 550px) {
+  .about-bg {
+    width: 100%;
+    top: -20%;
+  }
+}
 
 .hexagone {
   clip-path: polygon(45% 1.33975%, 46.5798% 0.60307%, 48.26352% 0.15192%, 50% 0%, 51.73648% 0.15192%, 53.4202% 0.60307%, 55% 1.33975%, 89.64102% 21.33975%, 91.06889% 22.33956%, 92.30146% 23.57212%, 93.30127% 25%, 94.03794% 26.5798%, 94.48909% 28.26352%, 94.64102% 30%, 94.64102% 70%, 94.48909% 71.73648%, 94.03794% 73.4202%, 93.30127% 75%, 92.30146% 76.42788%, 91.06889% 77.66044%, 89.64102% 78.66025%, 55% 98.66025%, 53.4202% 99.39693%, 51.73648% 99.84808%, 50% 100%, 48.26352% 99.84808%, 46.5798% 99.39693%, 45% 98.66025%, 10.35898% 78.66025%, 8.93111% 77.66044%, 7.69854% 76.42788%, 6.69873% 75%, 5.96206% 73.4202%, 5.51091% 71.73648%, 5.35898% 70%, 5.35898% 30%, 5.51091% 28.26352%, 5.96206% 26.5798%, 6.69873% 25%, 7.69854% 23.57212%, 8.93111% 22.33956%, 10.35898% 21.33975%);
@@ -686,18 +740,33 @@ html[lang=ar] .nav-btn.active span:nth-child(2) {
   flex-direction: column;
   text-align: center;
   gap: 10px;
+  flex-shrink: 0;
+  min-height: 160px;
+  width: 100%;
 }
-.hexagone .item {
-  width: calc(100% - 15px);
+@media (max-width: 375px) {
+  .hexagone {
+    min-height: 140px;
+  }
 }
 .hexagone .item img {
   max-width: 35px;
   margin-bottom: 10px;
 }
+@media (max-width: 550px) {
+  .hexagone .item img {
+    max-width: 30px;
+  }
+}
 .hexagone .item p {
   font-size: 14px;
   color: #fff;
   position: relative;
+}
+@media (max-width: 550px) {
+  .hexagone .item p {
+    font-size: 13px;
+  }
 }
 .hexagone .item p::before {
   content: "";
@@ -714,6 +783,27 @@ html[lang=ar] .nav-btn.active span:nth-child(2) {
   position: relative;
   z-index: 3;
   transform: translateY(-50px);
+  padding-bottom: 100px;
+}
+
+.settings-title {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 5;
+}
+.settings-title .item {
+  padding: 10px 12px;
+  text-align: center;
+  background-color: #181818;
+  border-radius: 10px;
+  color: #fff;
+  width: calc(50% - 5px);
+  flex-wrap: wrap;
+  white-space: pre-wrap;
+  margin-bottom: 20px;
 }
 
 .copy-right {
@@ -837,6 +927,20 @@ html[lang=ar] .footer-section .links .link:hover {
 .loader img {
   height: 90px;
   width: 220px;
+}
+
+.main-title {
+  font-size: 22px;
+}
+.main-title.mb {
+  margin-bottom: 20px;
+}
+.main-title.bold {
+  font-weight: bold;
+}
+
+.main-cl {
+  color: #651212;
 }
 
 @keyframes loader {

@@ -37,6 +37,19 @@
   }
 }
 
+.main-title {
+    font-size: 22px;
+    &.mb {
+        margin-bottom: 20px;
+    }
+    &.bold {
+        font-weight: bold;
+    }
+}
+.main-cl {
+    color: #651212;
+}
+
 @keyframes loader {
   from {
       left: -250px;
