@@ -11,7 +11,7 @@
   justify-content: center;
   flex-direction: column;
   z-index: 99;
-  background: transparent linear-gradient(270deg, #199EBD 0%, #423D43 100%) 0% 0% no-repeat padding-box;
+  background-image: linear-gradient(to right, #a22b2b, #292525);
   .load {
       width: 250px;
       height: 10px;
@@ -27,13 +27,12 @@
           left: 0;
           width: 100%;
           height: 100%;
-          background-color: #199ebd;
+          background-image: linear-gradient(to right, #651212, #181818);
           animation: loader 1.2s infinite linear forwards;
       }
   }
   img {
-      height: 90px;
-      width: 220px;
+      max-width: 150px;
   }
 }
 
@@ -46,6 +45,7 @@
         font-weight: bold;
     }
 }
+
 .main-cl {
     color: #651212;
 }

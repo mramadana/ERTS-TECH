@@ -38,6 +38,26 @@ $(document).ready(function () {
     $(this).val($(this).val().replace(nonNumReg, ''));
   })
 
+
+      // start to slider-pricing
+      $('.slider-pricing').owlCarousel({
+        items: 1,
+        rtl: isRtl,
+        margin: 0,
+        autoplaySpeed: 3000,
+        autoplayTimeout: 3000,
+        smartSpeed: 1000,
+        nav: true,
+        loop: true,
+        dots: false,
+        autoplay: true,
+        autoplayHoverPause:true,
+        navText: [
+          "<i class='fas fa-angle-right'></i>",
+          "<i class='fas fa-angle-left'></i>",
+        ],
+    })
+
   
     
 });
