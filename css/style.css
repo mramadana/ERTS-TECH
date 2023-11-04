@@ -1111,6 +1111,11 @@ html[lang=ar] .book-img {
   left: 0;
   transform: translateY(-50%);
 }
+@media (max-width: 550px) {
+  .pricing-top-left {
+    height: 60px;
+  }
+}
 
 .settings {
   padding-bottom: 250px;
@@ -1126,6 +1131,11 @@ html[lang=en] .about-right {
 }
 html[lang=ar] .about-right {
   right: 0;
+}
+@media (max-width: 550px) {
+  .about-right {
+    height: 60px;
+  }
 }
 html[lang=en] .about-right {
   transform: rotateY(180deg);
